@@ -8,8 +8,7 @@ import ListItemText from '@material-ui/core/ListItemText';
 import Checkbox from '@material-ui/core/Checkbox';
 import IconButton from '@material-ui/core/IconButton';
 import DragIndicatorIcon from '@material-ui/icons/DragIndicator';
-
-import Input from '@material-ui/core/Input';
+import { DragDropContext } from 'react-beautiful-dnd';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,7 +18,15 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-function ToDoList() {
+const reorder = (list, startIndex, endIndex) => {
+  const result = Array.from(list);
+  const [removed] = result.splice(startIndex, 1);
+  result.splice(endIndex, 0, removed);
+
+  return result;
+};
+
+function ToDoList(props) {
   const classes = useStyles();
   const [checked, setChecked] = React.useState([0]);
 

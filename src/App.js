@@ -9,26 +9,26 @@ import { ListItemSecondaryAction } from '@material-ui/core'
 
 
 function App(props){
-  const {listItems, addItems} = useDatu()
+  const {listItems, addItems} = useDatu([])
 
   return (
     <div className="app">
       <Header />
-
       <div className="input">
         <ToDoInput 
           onSend={text=> addItems({text}) }
         />
       </div>
-
       <div className="list">
-        {listItems.map((m,i)=> {
-          return <tempToDoList key={i} 
-            text={m.text} 
+        {listItems && listItems.length > 0 
+          ? listItems.map((m,i)=> {
+            return <tempToDoList key={i} 
+              text={m.text} 
             />
-        })}
+          })
+        : "Nothing to do right now!"
+        }
       </div>
-
     </div>
   )
 }

@@ -4,6 +4,20 @@ html, #root{
   display:flex;
 }
 
+html { /* MOBILE */
+  font-size: 15px;
+}
+@media (min-width: 400px) {
+  html { /* TABLET */
+    font-size: 18px;
+  }
+}
+@media (min-width: 768px) {
+  html { /* DESKTOP */
+    font-size: 21px;
+  }
+}
+
 body{
   font-family:-apple-system,BlinkMacSystemFont,Helvetica Neue,Helvetica,Arial,sans-serif;
   height:100%;
@@ -41,3 +55,11 @@ body{
   justify-content: space-between;
   padding: 10px;
 }
+
+.no-todo{
+  display:flex;
+  justify-content: center;
+  padding-top: 30px;
+  flex-direction:column;
+  align-items: center;
+} 

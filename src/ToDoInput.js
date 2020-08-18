@@ -16,11 +16,11 @@ function ToDoInput(props) {
 
   return <div className="form-group">
     <form className={classes.root} noValidate autoComplete="off">
-      <input
-        //Input 
-        //defaultValue="What's to do today?"
-        //inputProps={{ 'aria-label': 'description' }}
-        placeholder="Type your todo here!"
+      <Input 
+        defaultValue="What's to do today?"
+        inputProps={{ 'aria-label': 'description' }}
+        fullWidth = {true}
+        //placeholder="Type your todo here!"
         value={text}
         onChange={
           e=> setText(e.target.value)

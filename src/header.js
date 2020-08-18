@@ -5,7 +5,6 @@ import SettingsIcon from '@material-ui/icons/Settings';
 function Header(){
     return <div className="header"> 
         <NotificationsPausedIcon color="primary" fontSize="large" />
-        time/date (?)
         <SettingsIcon color="primary" fontSize="large" />
     </div>
 }

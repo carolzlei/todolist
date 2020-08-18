@@ -1,9 +1,10 @@
 import React from 'react';
 
-function tempToDoList(props){
-    return <div className="list">  
+function TempToDoList(props){
+    console.log(props)
+    return <div className="list-group">  
         {props.text}
     </div>
 }
 
-export default tempToDoList
+export default TempToDoList
